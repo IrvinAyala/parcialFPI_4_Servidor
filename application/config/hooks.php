@@ -1,6 +1,4 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /*
 | -------------------------------------------------------------------------
 | Hooks
@@ -11,11 +9,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |	http://codeigniter.com/user_guide/general/hooks.html
 |
 */
-// hook for enable/disable profiling
-$hook['post_controller_constructor'][] = array(
-	'class'    => 'ProfilerEnabler',
-	'function' => 'enableProfiler',
-	'filename' => 'hooks.profiler.php',
-	'filepath' => 'hooks',
-	'params'   => array()
-);
+
+
+
+/* End of file hooks.php */
+/* Location: ./application/config/hooks.php */

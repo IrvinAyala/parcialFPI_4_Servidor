@@ -1,9 +1,9 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 
-if (!defined('BASEPATH'))
-    exit('No direct script access allowed');
+require_once APPPATH . '/libraries/REST_Controller.php';
 
-class SucursalController extends CI_Controller {
+class SucursalController extends CI_Controller{
 
     /**
      * Index Page for this controller.
@@ -50,7 +50,27 @@ class SucursalController extends CI_Controller {
 
     }
 
+//PUT para sucursal
+    function putsucursal() {
+        $idsucursal = $this->input->post('idsucursal');
+        $nombreSucursal = $this->input->post('nombreSucursal');
+
+        $this->load->model('sucursal');
+        $this->sucursal->putSucursal($idsucursal, $nombreSucursal);
+
+        
+//        $data = array('returned: '. $this->put('id'));
+//        $this->response($data);
+        
+    }
     
+//DELETE para sucursal
+      function eliminarsucursal($idSucursal) {
+       
+        $this->load->model('sucursal');
+        $this->sucursal->eliminarSucursal($idSucursal);
+
+    }
     
     
 }

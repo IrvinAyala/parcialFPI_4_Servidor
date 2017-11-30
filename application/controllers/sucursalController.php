@@ -49,12 +49,14 @@ class SucursalController extends CI_Controller {
     }
 
 //PUT para sucursal
-    function putsucursal() {
-        $idsucursal = $this->input->post('idsucursal');
+    function putsucursal($idsucursal) {
+//        $idsucursal = $this->input->post('idsucursal');
         $nombreSucursal = $this->input->post('nombreSucursal');
 
         $this->load->model('sucursal');
         $this->sucursal->putSucursal($idsucursal, $nombreSucursal);
+        
+        
     }
 
 //DELETE para sucursal

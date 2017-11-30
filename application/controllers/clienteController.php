@@ -50,15 +50,15 @@ class ClienteController extends CI_Controller {
     }
 
 //PUT para cliente
-    function putcliente() {
-        $id_cliente = $this->input->post('id_cliente');
-        $nombre_cliente = $this->input->post('nombre_cliente');
-        $genero_cliente = $this->input->post('genero_cliente');
+    function putcliente( $id_cliente) {
+//        $id_cliente = $this->input->post('id_cliente');
+//        $nombre_cliente = $this->input->post('nombre_cliente');
+//        $genero_cliente = $this->input->post('genero_cliente');
         $activo_cliente = $this->input->post('activo_cliente');
-        $id_sucursalcliente = $this->input->post('id_sucursalcliente');
+//        $id_sucursalcliente = $this->input->post('id_sucursalcliente');
 
         $this->load->model('cliente');
-        $this->cliente->putCliente($id_cliente, $nombre_cliente, $genero_cliente, $activo_cliente, $id_sucursalcliente);
+        $this->cliente->putCliente($id_cliente, $activo_cliente);
     }
 
 //DELETE para cliente

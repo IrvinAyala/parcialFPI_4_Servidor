@@ -32,13 +32,13 @@ class Cliente extends CI_Model {
     }
 
 //PUT para cliente
-    function putCliente($id_cliente, $nombre_cliente, $genero_cliente, $activo_cliente, $id_sucursalcliente) {
+    function putCliente($id_cliente, $activo_cliente) {
         $data = array(
             'id_cliente' => $id_cliente,
-            'nombre_cliente' => $nombre_cliente,
-            'genero_cliente' => $genero_cliente,
+//            'nombre_cliente' => $nombre_cliente,
+//            'genero_cliente' => $genero_cliente,
             'activo_cliente' => $activo_cliente,
-            'id_sucursalcliente' => $id_sucursalcliente
+//            'id_sucursalcliente' => $id_sucursalcliente
         );
 
         $this->db->where('id_cliente', $id_cliente);

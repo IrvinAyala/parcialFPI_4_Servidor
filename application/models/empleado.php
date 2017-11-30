@@ -17,5 +17,10 @@ function getEmpleadoById($idEmpleado){
   $query = $this->db->get('empleado');
   return $query->row();
 }
+function getEmpleadoByIdSucursal($idSucursal){
+  $this->db->where('id_sucursal', $idSucursal);
+  $query = $this->db->get('empleado');
+  return $query->result_array();
+}
 
 }

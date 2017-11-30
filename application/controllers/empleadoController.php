@@ -37,6 +37,14 @@ class EmpleadoController extends CI_Controller {
         echo json_encode($data);
     }
 
+//GET por id  sucursal
+        public function getempleadobyidsucursal($idSucursal) {
+            $this->load->model('empleado');
+            $data = $this->empleado->getEmpleadoByIdSucursal($idSucursal);
+            header('Content-Type: application/json');
+            echo json_encode($data);
+        }
+
 }
 
 /* End of file welcome.php */

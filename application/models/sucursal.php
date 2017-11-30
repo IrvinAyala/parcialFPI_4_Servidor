@@ -18,7 +18,6 @@ class Sucursal extends CI_Model {
         $query = $this->db->get('sucursal');
         return $query->row();
     }
-
 //POST para sucursal
     function postSucursal($idsucursal, $nombreSucursal) {
         $data = array(
@@ -34,10 +33,10 @@ class Sucursal extends CI_Model {
             'idsucursal' => $idsucursal,
             'nombreSucursal' => $nombreSucursal
         );
-        
+
         $this->db->where('idsucursal', $idsucursal);
         return $this->db->update('sucursal', $data);
-        
+
 //        $this->title   = $_POST['title'];
 //        $this->content = $_POST['content'];
 //        $this->date    = time();
@@ -50,7 +49,7 @@ class Sucursal extends CI_Model {
         $this->db->where('idsucursal', $idsucursal);
         return $this->db->delete('sucursal');
     }
-    
-    
-    
+
+
+
 }

@@ -1,9 +1,8 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 require_once APPPATH . '/libraries/REST_Controller.php';
 
-class SucursalController extends CI_Controller{
+class SucursalController extends CI_Controller {
 
     /**
      * Index Page for this controller.
@@ -24,7 +23,7 @@ class SucursalController extends CI_Controller{
         $this->load->view('sucursalController_message');
     }
 
-//GET para sucursal
+//GET para todas las sucursales
     public function getsucursal() {
         $this->load->model('sucursal');
         $data = $this->sucursal->getSucursal();
@@ -47,7 +46,6 @@ class SucursalController extends CI_Controller{
 
         $this->load->model('sucursal');
         $this->sucursal->postSucursal($idsucursal, $nombreSucursal);
-
     }
 
 //PUT para sucursal
@@ -57,22 +55,14 @@ class SucursalController extends CI_Controller{
 
         $this->load->model('sucursal');
         $this->sucursal->putSucursal($idsucursal, $nombreSucursal);
-
-        
-//        $data = array('returned: '. $this->put('id'));
-//        $this->response($data);
-        
     }
-    
+
 //DELETE para sucursal
-      function eliminarsucursal($idSucursal) {
-       
+    function eliminarsucursal($idSucursal) {
         $this->load->model('sucursal');
         $this->sucursal->eliminarSucursal($idSucursal);
-
     }
-    
-    
+
 }
 
 /* End of file welcome.php */

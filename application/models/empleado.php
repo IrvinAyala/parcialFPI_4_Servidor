@@ -11,6 +11,7 @@ function getEmpleado(){
   $query = $this->db->get('empleado');
   return $query->result_array();
 }
+
 function getEmpleadoById($idEmpleado){
   $this->db->where('id_empleado', $idEmpleado);
   $query = $this->db->get('empleado');

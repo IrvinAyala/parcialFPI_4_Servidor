@@ -46,7 +46,7 @@ class Sucursal extends CI_Model {
     }
 
  //DELETE para sucursal
-    function eliminarSucursal($idsucursal) {
+    function  deleteSucursal($idsucursal) {
         $this->db->where('idsucursal', $idsucursal);
         return $this->db->delete('sucursal');
     }

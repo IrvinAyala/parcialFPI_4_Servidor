@@ -52,7 +52,7 @@ class Cliente extends CI_Model {
     }
 
     //DELETE para cliente
-    function eliminarCliente($id_cliente) {
+    function  deleteCliente($id_cliente) {
         $this->db->where('id_cliente', $id_cliente);
         return $this->db->delete('cliente');
     }

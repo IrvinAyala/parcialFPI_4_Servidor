@@ -62,7 +62,7 @@ class ClienteController extends CI_Controller {
     }
 
 //DELETE para cliente
-    function eliminarcliente($id_cliente) {
+    function deletecliente($id_cliente) {
         $this->load->model('cliente');
         $this->cliente->eliminarCliente($id_cliente);
     }

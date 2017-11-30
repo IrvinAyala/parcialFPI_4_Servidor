@@ -60,7 +60,7 @@ class PagoController extends CI_Controller {
     }
 
 //DELETE para pago
-    function eliminarpago($idpago) {
+    function  deletepago($idpago) {
         $this->load->model('pago');
         $this->pago->eliminarPago($idpago);
     }

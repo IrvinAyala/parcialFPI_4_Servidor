@@ -50,7 +50,7 @@ class Pago extends CI_Model {
     }
 
     //DELETE para pago
-    function eliminarPago($idpago) {
+    function  deletePago($idpago) {
         $this->db->where('idpago', $idpago);
         return $this->db->delete('pago');
     }

@@ -60,7 +60,7 @@ class SucursalController extends CI_Controller {
     }
 
 //DELETE para sucursal
-    function eliminarsucursal($idSucursal) {
+    function  deletesucursal($idSucursal) {
         $this->load->model('sucursal');
         $this->sucursal->eliminarSucursal($idSucursal);
     }

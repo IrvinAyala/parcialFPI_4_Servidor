@@ -6,7 +6,7 @@ class Pago extends CI_Model {
         parent::__construct();
     }
 
-//GET para pago  
+//GET para pago
     function getPago() {
         $query = $this->db->get('pago');
         return $query->result_array();
@@ -19,6 +19,12 @@ class Pago extends CI_Model {
         return $query->row();
     }
 
+//GET por id de cliente
+function getPagoByIdCliente($idcliente) {
+  $this->db->where('idcliente', $idcliente);
+    $query = $this->db->get('pago');
+    return $query->result_array();
+}
 //POST para pago
     function postPago($idpago, $idcliente, $idTipoPago, $fecha) {
         $data = array(

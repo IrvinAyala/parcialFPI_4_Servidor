@@ -29,10 +29,18 @@ class PagoController extends CI_Controller {
         echo json_encode($data);
     }
 
-//GET por id para pago    
+//GET por id para pago
     public function getpagobyid($idpago) {
         $this->load->model('pago');
         $data = $this->pago->getPagoById($idpago);
+        header('Content-Type: application/json');
+        echo json_encode($data);
+    }
+
+//GET por id de cliente
+    public function getpagobyidcliente($idcliente) {
+        $this->load->model('pago');
+        $data = $this->pago->getPagoByIdCliente($idcliente);
         header('Content-Type: application/json');
         echo json_encode($data);
     }
@@ -43,7 +51,6 @@ class PagoController extends CI_Controller {
         $idcliente = $this->input->post('idcliente');
         $idTipoPago = $this->input->post('idTipoPago');
         $fecha = $this->input->post('fecha');
-
         $this->load->model('pago');
         $this->pago->postPago($idpago, $idcliente, $idTipoPago, $fecha);
     }
@@ -54,7 +61,6 @@ class PagoController extends CI_Controller {
         $idcliente = $this->input->post('idcliente');
         $idTipoPago = $this->input->post('idTipoPago');
         $fecha = $this->input->post('fecha');
-
         $this->load->model('pago');
         $this->pago->putPago($idpago, $idcliente, $idTipoPago, $fecha);
     }
@@ -69,4 +75,3 @@ class PagoController extends CI_Controller {
 
 /* End of file welcome.php */
 /* Location: ./application/controllers/welcome.php */
-

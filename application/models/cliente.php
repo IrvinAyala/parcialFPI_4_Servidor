@@ -6,7 +6,7 @@ class Cliente extends CI_Model {
         parent::__construct();
     }
 
-//GET para cliente  
+//GET para cliente
     function getCliente() {
         $query = $this->db->get('cliente');
         return $query->result_array();
